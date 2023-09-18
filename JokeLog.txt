@@ -1,0 +1,466 @@
+/*--------------------------------------------------------
+
+This output log file contains the console logs of the three programs JokeClient, JokeServer and JokeClientAdmin.
+In the order of their execution, the logs are displayed and are preceded by the file name from which they're printed for a better understanding.
+
+----------------------------------------------------------*/
+
+//Using only Primary server
+//Running JokeClient and JokeServer on primary server on localhost
+
+//Initialize JokeServer
+/*JokeServer
+
+Monica Narni's Joke Server
+
+Using Primaryserver, Port:4545
+
+Joke mode
+
+//Initialize JokeClient
+/*JokeClient
+
+Monica Narni's Joke Client
+
+Server one: localhost, port: 4545
+
+Using server: localhost, Port:4545
+
+Enter an username, (quit) to end:
+
+//No username input provided 
+/*JokeClient
+
+Enter an username, (quit) to end:
+Please enter a name
+
+//Username provided to JokeClient
+/*JokeClient
+
+Enter an username, (quit) to end:
+Please enter a name
+Client_1
+
+//Trying to switch to secondary server even though there isn't one
+/*JokeClient
+Primary Server at port 4545
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+s
+No secondary server being used
+
+//Request for a response from server by pressing Enter 
+/*JokeClient
+
+Primary Server at port 4545
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+
+JC Client_1: What's Thanos's favorite app on his phone? Snapchat!
+
+/*JokeServer
+
+Joke mode
+Sent joke JC to Client_1
+
+//Request another response by pressing Enter and ensure a random joke is returned without repetition
+/*JokeClient
+
+Primary Server at port 4545
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+
+JB Client_1: Where did the music teacher leave her keys? In the piano!
+
+/*JokeServer
+
+Sent joke JB to Client_1
+
+//Request another response by pressing Enter and ensure a random joke is returned without repetition
+/*JokeClient
+
+Primary Server at port 4545
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+
+JD Client_1: What is a room with no walls? A mushroom!
+
+/*JokeServer
+
+Sent joke JD to Client_1
+
+//Request another response by pressing Enter and ensure a joke cycle is completed
+/*JokeClient
+
+Primary Server at port 4545
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+
+JA Client_1: What do you call an ant who fights crime? A vigilANTe!
+
+Joke Cycle completed
+
+/*JokeServer
+
+Sent joke JA to Client_1
+
+Joke cycle completed for Client_1
+
+//Request another response by pressing Enter and check a new joke cycle is started
+/*JokeClient
+
+Primary Server at port 4545
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+
+JD Client_1: What is a room with no walls? A mushroom!
+
+/*JokeServer
+
+Sent joke JD to Client_1
+
+//Initialize JokeClientAdmin on localhost
+/*JokeClientAdmin
+
+Monica Narni's Joke Client Admin
+
+Server one: localhost, port: 5050
+
+Joke Mode
+
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for mode change:
+
+//Change the mode by pressing Enter
+/*JokeClientAdmin
+
+Proverb Mode
+
+//Request response from server and check if a proverb is being returned
+/*JokeClient
+
+Primary Server at port 4545
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+
+PB Client_1: A happy heart is better than a full purse.
+
+/*JokeServer
+
+Proverb mode
+Sent proverb PB to Client_1
+
+//Request response from server and check if a proverbs are returned without repetition in a cycle
+/*JokeClient
+
+Primary Server at port 4545
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+
+PC Client_1: All is fair in love and war.
+
+
+Primary Server at port 4545
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+
+PA Client_1: A bad workman always blames his tools.
+
+
+Primary Server at port 4545
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+
+PD Client_1: A rolling stone gathers no moss.
+
+Proverb Cycle completed
+
+/*JokeServer
+
+Sent proverb PC to Client_1
+
+Sent proverb PA to Client_1
+
+Sent proverb PD to Client_1
+
+Proverb cycle completed for Client_1
+
+//Change mode from Proverb to Joke and back to Proverb to check if the states are being maintained in the client
+/*JokeClientAdmin
+
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for mode change:
+
+Joke Mode
+
+/*JokeClient
+
+Primary Server at port 4545
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+
+JB Client_1: Where did the music teacher leave her keys? In the piano!
+
+
+Primary Server at port 4545
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+
+JC Client_1: What's Thanos's favorite app on his phone? Snapchat!
+
+/*JokeServer
+
+Joke mode
+Sent joke JB to Client_1
+
+Sent joke JC to Client_1
+
+/*JokeClientAdmin
+
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for mode change:
+
+Proverb Mode
+
+/*JokeClient
+
+Primary Server at port 4545
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+
+PC Client_1: All is fair in love and war.
+
+
+Primary Server at port 4545
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+
+PD Client_1: A rolling stone gathers no moss.
+
+/*JokeServer
+
+Proverb mode
+Sent proverb PC to Client_1
+
+Sent proverb PD to Client_1
+
+//Using both Primary and Secondary servers
+
+//Initialize secondary JokeServer
+/*JokeServer
+
+Monica Narni's Joke Server
+
+Using Secondary server, Port:4546
+
+<S2>Joke mode
+
+//Initialize JokeClient and JokeClientAdmin with secondary server, IP addresses provided
+/*JokeClient
+
+Monica Narni's Joke Client
+
+Server one: 192.168.0.72, port: 4545
+
+Server two: 127.0.0.1, port: 4546
+
+Using server: 192.168.0.72, Port:4545
+
+Enter an username, (quit) to end:
+
+/*JokeClientAdmin
+Monica Narni's Joke Client Admin
+
+Server one: 192.168.0.72, port: 5050
+
+Server two: 127.0.0.1, port: 5051
+
+Using server: 192.168.0.72, Port:5050
+
+Joke Mode
+
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for mode change:
+
+//Request response from server by default primary server is picked up
+/*JokeClient
+Enter an username, (quit) to end: Client_2
+
+
+Primary Server at port 4545
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+
+JA Client_2: What do you call an ant who fights crime? A vigilANTe!
+
+/*JokeServer
+Joke mode
+Sent joke JA to Client_2
+
+//Change the mode primary server mode using JokeClientAdmin and request a response with primary server
+/*JokeClientAdmin
+
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for mode change:
+
+Proverb Mode
+
+/*JokeClient
+
+Primary Server at port 4545
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+
+PC Client_2: All is fair in love and war.
+
+/*JokeServer
+
+Proverb mode
+Sent proverb PC to Client_2
+
+//Switch the server to secondary server in JokeClient and request a response from secondary JokeServer
+
+/*JokeClient
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+s
+Now communicating with: 140.192.1.9, port: 4546
+
+
+
+<S2> Secondary Server at port 4546
+<S2>Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+
+<S2>JA Client_2: What do you call an ant who fights crime? A vigilANTe!
+
+
+<S2> Secondary Server at port 4546
+<S2>Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+
+<S2>JD Client_2: What is a room with no walls? A mushroom!
+
+
+<S2> Secondary Server at port 4546
+<S2>Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+
+<S2>JB Client_2: Where did the music teacher leave her keys? In the piano!
+
+
+<S2> Secondary Server at port 4546
+<S2>Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+
+<S2>JC Client_2: What's Thanos's favorite app on his phone? Snapchat!
+
+Joke Cycle completed
+
+/*JokeServer
+<S2>Joke mode
+<S2> Sent joke JA to Client_2
+
+<S2> Sent joke JD to Client_2
+
+<S2> Sent joke JB to Client_2
+
+<S2> Sent joke JC to Client_2
+
+<S2> Joke cycle completed for Client_2
+
+//Change mode of secondary server by switching JokeClientAdmin to secondary server
+/*JokeClientAdmin
+
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for mode change:
+s
+Now communicating with: 127.0.0.1, port: 5051
+
+<S2>Joke Mode
+
+<S2>Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for mode change:
+
+<S2>Proverb Mode
+
+//Request a response from secondary server
+/*JokeClient
+
+<S2> Secondary Server at port 4546
+<S2>Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+
+<S2>PD Client_2: A rolling stone gathers no moss.
+
+<S2> Secondary Server at port 4546
+<S2>Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+
+<S2>PA Client_2: A bad workman always blames his tools.
+
+/*JokeServer
+
+<S2> Proverb mode
+<S2> Sent proverb PD to Client_2
+
+<S2> Sent proverb PA to Client_2
+
+//Switch to primary server to check if the mode and state are maintained
+/*JokeClient
+<S2> Secondary Server at port 4546
+<S2>Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+s
+Now communicating with: 192.168.0.72, port: 4545
+
+
+
+Primary Server at port 4545
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+
+PB Client_2: A happy heart is better than a full purse.
+
+/*JokeServer
+
+Proverb mode
+Sent proverb PB to Client_2
+
+//Change mode of primary server and check jokes
+/*JokeClientAdmin
+
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for mode change:
+
+Joke Mode
+
+/*JokeClient
+
+Primary Server at port 4545
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+
+JB Client_2: Where did the music teacher leave her keys? In the piano!
+
+/*JokeServer
+
+Joke Mode
+
+Sent joke JB to Client_2
+
+//Add a new Client and check if the states are retained seperately
+/*JokeClient
+
+Monica Narni's Joke Client
+
+Server one: 192.168.0.72, port: 4545
+
+Server two: 127.0.0.1, port: 4546
+
+Using server: 192.168.0.72, Port:4545
+
+Enter an username, (quit) to end: Client_3
+
+
+Primary Server at port 4545
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+
+JC Client_3: What's Thanos's favorite app on his phone? Snapchat!
+
+Primary Server at port 4545
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+
+JB Client_3: Where did the music teacher leave her keys? In the piano!
+
+
+Primary Server at port 4545
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+
+JA Client_3: What do you call an ant who fights crime? A vigilANTe!
+
+
+Primary Server at port 4545
+Please enter 's' to switch the servers or 'quit' to cancel request or press 'Enter' for response message
+
+JD Client_3: What is a room with no walls? A mushroom!
+
+Joke Cycle completed
+
+/*JokeServer
+
+Sent joke JC to Client_3
+
+Sent joke JB to Client_3
+
+Sent joke JA to Client_3
+
+Sent joke JD to Client_3
+
+Joke cycle completed for Client_3
